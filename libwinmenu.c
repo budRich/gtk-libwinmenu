@@ -1,7 +1,3 @@
-/*
- * gcc -shared  `pkg-config gtk+-x11-2.0 --cflags --libs` -o libwinmenu.so main.c
- * */
-
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
@@ -57,7 +53,7 @@ gtk_module_init (gint * argc, gchar *** argv)
 {
    GtkWidget *fc;
    GObjectClass *klass;
-   const gchar *app_whitelist = "gnome-terminal, gimp, mousepad";
+   const gchar *app_whitelist = "gnome-terminal, gimp-2.10, mousepad";
 
    if (strstr (app_whitelist, g_get_prgname()) != NULL)
 	return;
@@ -81,8 +77,7 @@ gtk_module_init (gint * argc, gchar *** argv)
    fc = gtk_window_new(GTK_WINDOW_TOPLEVEL);
    klass = GTK_WINDOW_GET_CLASS(fc);
 
-   gtk_binding_entry_add_signal (gtk_binding_set_by_class (klass), GDK_m, GDK_CONTROL_MASK,
-                                "toggle-menu-bar", 0);
-   gtk_binding_entry_add_signal (gtk_binding_set_by_class (klass), GDK_m, GDK_MOD1_MASK,
+   // Ctrl+Alt+m to toggle menu
+   gtk_binding_entry_add_signal (gtk_binding_set_by_class (klass), GDK_m, GDK_CONTROL_MASK|GDK_MOD1_MASK,
                                 "toggle-menu-bar", 0);
 }
