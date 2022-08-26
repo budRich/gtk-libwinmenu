@@ -1,6 +1,12 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkkeysyms.h>
 
+#ifdef GTK3_BUILD
+#include <gdk/gdktypes.h>
+#define GTK_WIDGET_VISIBLE(x)  gtk_widget_get_visible(x)
+#define GTK_WIDGET_TOPLEVEL(x) gtk_widget_is_toplevel(x)
+#endif
+
 #define _gtk_marshal_VOID__VOID g_cclosure_marshal_VOID__VOID
 #define _gtk_marshal_NONE__NONE _gtk_marshal_VOID__VOID
 
@@ -12,6 +18,7 @@ static void toggle_menu_bar (GtkWidget *widget, gpointer user_data)
 {
    GtkWidget * wdg = GTK_WIDGET(user_data);
    GTK_WIDGET_GET_CLASS(wdg)->show = old_widget_show;
+
    if (GTK_WIDGET_VISIBLE(wdg))
       gtk_widget_hide(wdg);
    else
@@ -25,7 +32,9 @@ static void toggle_menu_bar (GtkWidget *widget, gpointer user_data)
 static void anchor_event (GtkWidget *widget, GtkWidget *previous_toplevel, gpointer   user_data)
 {
    GtkWidget *toplevel = gtk_widget_get_toplevel (widget);
-   if (GTK_WIDGET_TOPLEVEL (toplevel)) {
+
+   if (GTK_WIDGET_TOPLEVEL (toplevel))
+   {
       if (previous_toplevel) 
           g_signal_handlers_disconnect_by_func(previous_toplevel, G_CALLBACK(toggle_menu_bar), widget);
       g_signal_connect (toplevel, "toggle-menu-bar", G_CALLBACK(toggle_menu_bar), widget);
@@ -53,10 +62,10 @@ gtk_module_init (gint * argc, gchar *** argv)
 {
    GtkWidget *fc;
    GObjectClass *klass;
-   const gchar *app_whitelist = "gnome-terminal, gimp-2.10, mousepad";
+   const gchar *app_whitelist = "gnome-terminal, gimp-2.10, mousepad, arandr";
 
    if (strstr (app_whitelist, g_get_prgname()) != NULL)
-	return;
+   	return;
 
    g_signal_new ("toggle-menu-bar",
                  GTK_TYPE_WINDOW,
@@ -78,6 +87,7 @@ gtk_module_init (gint * argc, gchar *** argv)
    klass = GTK_WINDOW_GET_CLASS(fc);
 
    // Ctrl+Alt+m to toggle menu
-   gtk_binding_entry_add_signal (gtk_binding_set_by_class (klass), GDK_m, GDK_CONTROL_MASK|GDK_MOD1_MASK,
+   gtk_binding_entry_add_signal (gtk_binding_set_by_class (klass),
+                                 GDK_KEY_m, GDK_CONTROL_MASK|GDK_MOD1_MASK,
                                 "toggle-menu-bar", 0);
 }
