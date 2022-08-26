@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2022, budRich
- *               2010, mrdeath (https://www.linux.org.ru/gallery/screenshots/5606544?cid=5617292)
+ *               2010, mrdeath (http://www.linux.org.ru/jump-message.jsp?msgid=5606544&cid=5617512)
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
