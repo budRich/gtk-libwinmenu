@@ -32,7 +32,6 @@ static void toggle_menu_bar (GtkWidget *widget, gpointer user_data)
    {
       gtk_widget_show(wdg);
       gtk_widget_grab_focus(wdg);
-    
    }
 }
 
@@ -96,5 +95,5 @@ gtk_module_init (gint * argc, gchar *** argv)
    // Ctrl+Alt+m to toggle menu
    gtk_binding_entry_add_signal (gtk_binding_set_by_class (klass),
                                  GDK_KEY_m, GDK_CONTROL_MASK|GDK_MOD1_MASK,
-                                "toggle-menu-bar", 0);
+                                 "toggle-menu-bar", 0);
 }
