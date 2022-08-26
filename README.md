@@ -43,7 +43,8 @@ The following applications will always be ignored:
 
 libwinmenu.c is based on the AUR packages
 [gtk2-libwinmenu] and [gtk3-libwinmenu], which in turn
-is based on post at the [linux.org.ru] forums.
+is based on post at the [linux.org.ru] forums.  
+(`http://www.linux.org.ru/jump-message.jsp?msgid=5606544&cid=5617512`)
 
 ### license
 
