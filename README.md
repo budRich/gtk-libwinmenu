@@ -45,15 +45,13 @@ libwinmenu.c is based on the AUR packages
 [gtk2-libwinmenu] and [gtk3-libwinmenu], which in turn
 is based on post at the [linux.org.ru] forums.  
 (`http://www.linux.org.ru/jump-message.jsp?msgid=5606544&cid=5617512`)
+And it looks like that post is based on the old gnome2 extenstion
+[gnome2-globalmenu](https://code.google.com/archive/p/gnome2-globalmenu/)
 
 ### license
 
-Since the source is a snippet from a forumpost that
-lacks license acknowledgement, `libwinmenu.c` is here published
-**without** a license. If you for some reason need a license
-you need to contact the original author on [linux.org.ru],
-if you do, and get a license, please let me know if I can
-add that license to this repository as well.
+the forumpost lacks license acknowledgement, but `gnome2-globalmenu`, is licensed
+under GPL2, so i use that here as well.
 
 [linux.org.ru]: (http://www.linux.org.ru/jump-message.jsp?msgid=5606544&cid=5617512)
 [gtk2-libwinmenu]: https://aur.archlinux.org/packages/gtk2-libwinmenu
