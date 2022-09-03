@@ -45,8 +45,6 @@ libwinmenu.c is based on the AUR packages
 [gtk2-libwinmenu] and [gtk3-libwinmenu], which in turn
 is based on post at the [linux.org.ru] forums.  
 (`http://www.linux.org.ru/jump-message.jsp?msgid=5606544&cid=5617512`)
-And it looks like that post is based on the old gnome2 extenstion
-[gnome2-globalmenu](https://code.google.com/archive/p/gnome2-globalmenu/)
 
 [linux.org.ru]: (http://www.linux.org.ru/jump-message.jsp?msgid=5606544&cid=5617512)
 [gtk2-libwinmenu]: https://aur.archlinux.org/packages/gtk2-libwinmenu
