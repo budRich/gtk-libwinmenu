@@ -48,11 +48,6 @@ is based on post at the [linux.org.ru] forums.
 And it looks like that post is based on the old gnome2 extenstion
 [gnome2-globalmenu](https://code.google.com/archive/p/gnome2-globalmenu/)
 
-### license
-
-the forumpost lacks license acknowledgement, but `gnome2-globalmenu`, is licensed
-under GPL2, so i use that here as well.
-
 [linux.org.ru]: (http://www.linux.org.ru/jump-message.jsp?msgid=5606544&cid=5617512)
 [gtk2-libwinmenu]: https://aur.archlinux.org/packages/gtk2-libwinmenu
 [gtk3-libwinmenu]: https://aur.archlinux.org/packages/gtk3-libwinmenu
