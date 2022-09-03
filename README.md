@@ -21,6 +21,9 @@ sudo make LIBDIR=/usr/lib install # adjust LIBDIR for your distribution
 Set the following environment variable for changes
 to take place: `GTK_MODULES=winmenu`  
 
+> to be sure to preserve other set GTK_MODULES, use this:
+> `GTK_MODULES="winmenu${GTK_MODULES:+:$GTK_MODULES}"`
+
 To have it always apply (**NOT** recommended):  
 `export GTK_MODULES=winmenu` (in `~/.xinitrc` or similar).
 
