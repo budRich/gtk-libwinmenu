@@ -12,8 +12,8 @@ compatible module. (By setting **GTK3_BUILD**).
 ```shell
 git clone https://github.com/budRich/gtk-libwinmenu.git
 cd gtk-libwinmenu
-make LIBDIR=/usr/lib # adjust LIBDIR for your distribution
-sudo make install
+make
+sudo make LIBDIR=/usr/lib install # adjust LIBDIR for your distribution
 ```
 
 ### usage
